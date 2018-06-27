@@ -1,0 +1,12 @@
+language:
+  - cpp
+
+before_install:
+  - pip install --user cpp-coveralls
+
+script:
+  - qmake
+  - make
+
+notifications:
+  email: false
