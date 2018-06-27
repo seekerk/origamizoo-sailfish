@@ -4,14 +4,13 @@ language:
 before_install:
   - pip install --user cpp-coveralls
 
-install: [
-    "git clone https://github.com/sailfishos/libsailfishapp dependencies/libsailfishapp",
-    "cd dependencies/libsailfishapp",
-    "qmake PREFIX=/usr .",
-    "make",
-    "sudo make install",
-    "cd ../.."
-  ],
+install: 
+  - git clone https://github.com/sailfishos/libsailfishapp dependencies/libsailfishapp
+  - cd dependencies/libsailfishapp
+  - qmake PREFIX=/usr .
+  - make
+  - sudo make install
+  - cd ../..
 
 script:
   - qmake
