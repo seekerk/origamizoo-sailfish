@@ -3,6 +3,7 @@ language:
 
 before_install:
   - pip install --user cpp-coveralls
+  - sudo apt-get install qt5-default
 
 install: 
   - git clone https://github.com/sailfishos/libsailfishapp dependencies/libsailfishapp
