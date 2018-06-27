@@ -7,6 +7,7 @@ before_install:
 install: 
   - git clone https://github.com/sailfishos/libsailfishapp dependencies/libsailfishapp
   - cd dependencies/libsailfishapp
+  - git checkout tags/0.0.6 -b 0.0.6
   - qmake PREFIX=/usr .
   - make
   - sudo make install
