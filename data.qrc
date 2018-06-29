@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>content/fonts/font.ttf</file>
         <file>content/ic_launcher.png</file>
+        <file>content/figures.json</file>
     </qresource>
 </RCC>

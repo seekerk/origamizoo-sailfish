@@ -15,7 +15,8 @@ TARGET = origamizoo
 CONFIG += sailfishapp
 
 SOURCES += src/origamizoo.cpp \
-    src/origamiitem.cpp
+    src/origamiitem.cpp \
+    src/loadorigamies.cpp
 
 DISTFILES += qml/origamizoo.qml \
     qml/cover/CoverPage.qml \
@@ -44,7 +45,8 @@ CONFIG += sailfishapp_i18n
 TRANSLATIONS += translations/origamizoo-de.ts
 
 HEADERS += \
-    src/origamiitem.h
+    src/origamiitem.h \
+    src/loadorigamies.h
 
 RESOURCES += \
     data.qrc

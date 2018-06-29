@@ -4,6 +4,7 @@
 
 #include <sailfishapp.h>
 #include "origamiitem.h"
+#include "loadorigamies.h"
 
 int main(int argc, char *argv[])
 {
@@ -13,12 +14,7 @@ int main(int argc, char *argv[])
     QScopedPointer<QQuickView> view(SailfishApp::createView());
     QQmlContext *ctxt = view->rootContext();
 
-    // create origami list
-    // TODO: change to loading from source
-    QList<QObject*> origamiList;
-    origamiList.append(new OrigamiItem("Bird"));
-    origamiList.append(new OrigamiItem("Cat"));
-
+    QList<QObject*> origamiList = loadOrigamies();
     // load origami list to view
     ctxt->setContextProperty("origamiListModel", QVariant::fromValue(origamiList));
 
