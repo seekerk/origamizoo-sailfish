@@ -14,7 +14,6 @@ CoverBackground {
             anchors.horizontalCenter: parent.horizontalCenter
         }
 
-
     CoverActionList {
         id: coverAction
 

@@ -36,5 +36,13 @@ Component {
             anchors.left: logoHolder.right
             anchors.leftMargin: 10
         }
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                origamiList.currentIndex = index;
+                console.log("Clicked " + index);
+                pageStack.push(Qt.resolvedUrl("../pages/ViewPage.qml"), {item: origamiList.model[index]})
+            }
+        }
     }
 }

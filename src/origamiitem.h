@@ -12,6 +12,7 @@ class OrigamiItem : public QObject
     Q_PROPERTY(QString logo READ logo NOTIFY logoChanged)
     Q_PROPERTY(int complexity READ complexity WRITE setComplexity NOTIFY complexityChanged)
     Q_PROPERTY(int steps READ steps WRITE setSteps NOTIFY stepsChanged)
+    Q_PROPERTY(QString folder READ folder WRITE setFolder NOTIFY folderChanged)
 
 public:
     explicit OrigamiItem(QString name, QObject *parent = nullptr);
@@ -27,6 +28,7 @@ public:
     int steps() {return _steps; }
     void setSteps(int steps) {_steps = steps; emit stepsChanged(); }
 
+    QString folder() {return _folder; }
     void setFolder(QString folder) {_folder = folder; }
 
 signals:
@@ -34,6 +36,7 @@ signals:
     void logoChanged();
     void complexityChanged();
     void stepsChanged();
+    void folderChanged();
 
 public slots:
 

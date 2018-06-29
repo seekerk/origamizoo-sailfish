@@ -33,7 +33,8 @@ DISTFILES += qml/origamizoo.qml \
     qml/pages/MainPage.qml \
     qml/items/OrigamiListItem.qml \
     content/fonts/font.ttf \
-    content/figures/*
+    content/figures/* \
+    qml/pages/ViewPage.qml
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
