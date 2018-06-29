@@ -25,8 +25,9 @@ QList<QObject*> loadOrigamies() {
     foreach (const QJsonValue & value, doc.array()) {
         QJsonObject obj = value.toObject();
         OrigamiItem *item = new OrigamiItem(obj["name"].toString());
-        item->setComplexity(obj["level"].toInt());
+        item->setComplexity(obj["level"].toString().toInt());
         item->setFolder(obj["folder"].toString());
+        item->setSteps(obj["steps"].toString().toInt());
         origamiList.append(item);
     }
     return origamiList;

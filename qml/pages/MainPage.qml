@@ -32,9 +32,12 @@ Page {
 
     SilicaListView {
         anchors {
-            fill: parent
-            topMargin: header.height
+            top: header.bottom
+            bottom: parent.bottom
+            left: parent.left
+            right: parent.right
         }
+        clip: true
         id: origamiList
         model: origamiListModel
         delegate: OrigamiListItem { }

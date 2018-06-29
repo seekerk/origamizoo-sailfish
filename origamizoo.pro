@@ -14,6 +14,8 @@ TARGET = origamizoo
 
 CONFIG += sailfishapp
 
+DEPLOYMENT_PATH = /usr/share/$${TARGET}
+
 SOURCES += src/origamizoo.cpp \
     src/origamiitem.cpp \
     src/loadorigamies.cpp
@@ -30,9 +32,15 @@ DISTFILES += qml/origamizoo.qml \
     origamizoo.desktop \
     qml/pages/MainPage.qml \
     qml/items/OrigamiListItem.qml \
-    content/fonts/font.ttf
+    content/fonts/font.ttf \
+    content/figures/*
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
+
+data.files = content
+data.path = $${DEPLOYMENT_PATH}
+
+INSTALLS += data
 
 # to disable building translations every time, comment out the
 # following CONFIG line

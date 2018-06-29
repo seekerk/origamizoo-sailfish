@@ -2,6 +2,7 @@
 #define ORIGAMIITEM_H
 
 #include <QObject>
+#include <sailfishapp.h>
 
 class OrigamiItem : public QObject
 {
@@ -10,6 +11,7 @@ class OrigamiItem : public QObject
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
     Q_PROPERTY(QString logo READ logo NOTIFY logoChanged)
     Q_PROPERTY(int complexity READ complexity WRITE setComplexity NOTIFY complexityChanged)
+    Q_PROPERTY(int steps READ steps WRITE setSteps NOTIFY stepsChanged)
 
 public:
     explicit OrigamiItem(QString name, QObject *parent = nullptr);
@@ -17,10 +19,13 @@ public:
     QString name() { return _name; }
     void setName(QString name) { _name = name; emit nameChanged(); }
 
-    QString logo() {return QString("content/figures/" + _folder + QString("/logo.png")); }
+    QString logo() {return SailfishApp::pathTo(QString("content/figures/") + _folder + QString("/logo.png")).toLocalFile(); }
 
     int complexity() {return _complexity; }
     void setComplexity(int complexity) {_complexity = complexity; emit complexityChanged(); }
+
+    int steps() {return _steps; }
+    void setSteps(int steps) {_steps = steps; emit stepsChanged(); }
 
     void setFolder(QString folder) {_folder = folder; }
 
@@ -28,6 +33,7 @@ signals:
     void nameChanged();
     void logoChanged();
     void complexityChanged();
+    void stepsChanged();
 
 public slots:
 
@@ -35,6 +41,7 @@ private:
     QString _name; // origami name
     QString _folder; // path to origami images folder
     int _complexity; // origami complexity
+    int _steps; // origami steps count
 };
 
 #endif // ORIGAMIITEM_H
