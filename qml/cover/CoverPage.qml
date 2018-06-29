@@ -2,11 +2,18 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 CoverBackground {
-    Label {
-        id: label
-        anchors.centerIn: parent
-        text: qsTr("My Cover")
-    }
+        Image {
+            id: logo
+            source: "qrc:/content/ic_launcher.png"
+            anchors.centerIn: parent
+            anchors.verticalCenterOffset: -80
+        }
+        Text {
+            text: "Origami Zoo"
+            anchors.top: logo.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
+
 
     CoverActionList {
         id: coverAction
