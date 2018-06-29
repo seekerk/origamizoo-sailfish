@@ -28,7 +28,8 @@ DISTFILES += qml/origamizoo.qml \
     translations/*.ts \
     origamizoo.desktop \
     qml/pages/MainPage.qml \
-    qml/items/OrigamiListItem.qml
+    qml/items/OrigamiListItem.qml \
+    content/fonts/font.ttf
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
@@ -44,3 +45,6 @@ TRANSLATIONS += translations/origamizoo-de.ts
 
 HEADERS += \
     src/origamiitem.h
+
+RESOURCES += \
+    data.qrc

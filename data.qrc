@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>content/fonts/font.ttf</file>
+        <file>content/ic_launcher.png</file>
+    </qresource>
+</RCC>
